@@ -40,3 +40,33 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.Jumbotron {
+  background-image: url(./images/짱구우는짤_배경.001.jpeg);
+  background-size:auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 130px;
+}
+
+.Jumbotron-string-div {
+  position: relative;
+  top: 120px;
+  margin-top: -45px;
+}
+
+.Jumbotron-string-div h1 {
+  color: white;
+}
+
+.Jumbotron-first-p {
+  color: blue;
+}
+
+.Jumbotron-btn {
+  background-color: transparent;
+  color: white;
+  border: 0;
+  outline: 0;
+  font-size: 45px;
+}

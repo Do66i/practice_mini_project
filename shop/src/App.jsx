@@ -1,27 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap'
-import { useState } from 'react'
-import zzanggu1 from './images/zzanggu1.jpeg'
-import zzanggu2 from './images/zzanggu2.jpeg'
-import zzanggu3 from './images/zzanggu3.jpeg'
+// import zzanggu1 from './images/zzanggu1.jpeg'
+// import zzanggu2 from './images/zzanggu2.jpeg'
+// import zzanggu3 from './images/zzanggu3.jpeg'
 import './App.css'
+import Data from './data.js'
+import Images from './images.js'
 
 function App() {
+
+  let [zzanggu, setZzanggu] = useState(Data);
+  let [images, setImages] = useState(Images);
 
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">Do66i님의 어딘가 빵가진 가게</Navbar.Brand>
+          <Navbar.Brand href="#home">굉장해 엄청나 짱구모음</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <Nav.Link href="#home">태초마을</Nav.Link>
+              <Nav.Link href="#link">링크?</Nav.Link>
+              <NavDropdown title="추가메뉴" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">짱구 액션빔</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">또 다른 짱구</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">짱구 무언가</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
               </NavDropdown>
@@ -39,25 +43,26 @@ function App() {
 
       <div className='container'>
         <div className='row'>
-          <div className='col-md-4'>
-            <img src={zzanggu1} width="50%"></img>
-            <h4>짱구</h4>
-            <p>짱구설명 & 귀여움수치</p>
-          </div>
-          <div className='col-md-4'>
-            <img src={zzanggu2} width="50%"></img>
-            <h4>짱구</h4>
-            <p>짱구설명 & 귀여움수치</p>
-          </div>
-          <div className='col-md-4'>
-            <img src={zzanggu3} width="50%"></img>
-            <h4>짱구</h4>
-            <p>짱구설명 & 귀여움수치</p>
-          </div>
+          {
+            zzanggu.map((a, i) => {
+              return <Card images={images[i]} zzanggu={zzanggu[i]} />
+            })
+          }
         </div>
       </div>
 
     </div >
+  )
+}
+
+function Card(props) {
+  return (
+    <div className='col-md-4'>
+      <img src={props.images} width="50%"></img>
+      <h4>{props.zzanggu.title}</h4>
+      <p>{props.zzanggu.content} <br></br>
+        귀여움수치 : {props.zzanggu.price}</p>
+    </div>
   )
 }
 

@@ -6,6 +6,7 @@ import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap'
 import './App.css'
 import Data from './data.js'
 import Images from './images.js'
+import { Link, Route, Switch } from 'react-router-dom';
 
 function App() {
 
@@ -41,6 +42,16 @@ function App() {
         </div>
       </div>
 
+
+      <Route path="/">
+        <div>디스이즈 메인</div>
+      </Route>
+      <Route path="/detail">
+        <div>디스이즈 디테일</div>
+      </Route>
+      { /* <Route path="/여기에경로명설정" component ={ 여기에컴포난트 }Route> */}
+
+
       <div className='container'>
         <div className='row'>
           {
@@ -54,6 +65,7 @@ function App() {
     </div >
   )
 }
+
 
 function Card(props) {
   return (

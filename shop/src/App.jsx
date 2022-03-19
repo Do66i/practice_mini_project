@@ -43,7 +43,7 @@ function App() {
       </div>
 
 
-      <Route path="/">
+      <Route exact="/">
         <div>디스이즈 메인</div>
       </Route>
       <Route path="/detail">

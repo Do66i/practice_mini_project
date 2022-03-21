@@ -10,3 +10,5 @@ function Card(props) {
     </div>
   )
 }
+
+console.log("깃농사용")

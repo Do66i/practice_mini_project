@@ -28,7 +28,7 @@ function Detail(props) {
   let [inputData, setInputData] = useState('');
 
   useEffect(() => {
-    let timer = setTimeout(() => { setAlert(false) }, 2000);
+    let timer = setTimeout(() => { setAlert(false); }, 2000);
     return () => { clearTimeout(timer); console.log("타이머와 함께 사라져라 얍!") }
   }, [alert]);
 

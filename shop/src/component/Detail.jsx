@@ -65,7 +65,7 @@ function Detail(props) {
           <p>{findZzanggu.content}</p>
           <p>{findZzanggu.price}</p>
           <button className="btn btn-danger">마음속에 저-장💖</button>
-          <button className="btn btn-danger" onClick={() => { history.push('/') }}>백 투더 태초마을</button>
+          <button className="btn btn-danger" onClick={() => { history.push('/detail/2') }}>백 투더 태초마을</button>
         </div>
       </div>
     </div>

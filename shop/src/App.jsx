@@ -55,6 +55,7 @@ function App() {
       </Route>
       <Route path="/detail/:id">
         <Detail images={images} zzanggu={zzanggu} />
+        {console.log("아아악 깃농사 아아악")}
       </Route>
 
     </div >

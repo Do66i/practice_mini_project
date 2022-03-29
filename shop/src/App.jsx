@@ -55,7 +55,7 @@ function App() {
       </Route>
       <Route path="/detail/:id">
         <Detail images={images} zzanggu={zzanggu} />
-        {console.log("아아악 깃농사 아아악 라우터53 -> 도메인 구입 (실습때 좋음 걍 싼거쓰면됨)")}
+        {console.log("아아악 깃농사 아아악 라우터53 (us-east 1에 인증서있어야함) -> 도메인 구입 (실습때 좋음 걍 싼거쓰면됨)")}
       </Route>
 
     </div >

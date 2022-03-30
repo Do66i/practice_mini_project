@@ -71,5 +71,5 @@ function Detail(props) {
     </div>
   )
 }
-
+{ console.log("깃농사아아ㅏㄱ아가악") }
 export default Detail;

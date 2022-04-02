@@ -64,7 +64,10 @@ function Detail(props) {
           <h4 className="pt-5">{findZzanggu.title}</h4>
           <p>{findZzanggu.content}</p>
           <p>{findZzanggu.price}</p>
-          <button className="btn btn-danger">마음속에 저-장💖</button>
+
+          <Info data={props.data}></Info>
+
+          <button className="btn btn-danger" onClick={() => { props.setData() }}>마음속에 저-장💖</button>
           <button className="btn btn-danger" onClick={() => { history.push('/detail/2') }}>백 투더 태초마을</button>
         </div>
       </div>
@@ -72,4 +75,11 @@ function Detail(props) {
   )
 }
 { console.log("깃농사아아ㅏㄱ아가악") }
+
+function Info(props) {
+  return (
+    <p>data : {props.data[0]} </p>
+  )
+}
+
 export default Detail;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap'
+import axios from 'axios';
 import './App.css'
 import Data from './data.js'
 import Images from './images.js'
@@ -11,6 +12,7 @@ function App() {
 
   let [zzanggu, setZzanggu] = useState(Data);
   let [images, setImages] = useState(Images);
+  let [data, setData] = useState([10, 11, 12])
 
   return (
     <div className="App">
@@ -51,10 +53,11 @@ function App() {
               })
             }
           </div>
+          <button className="btn btn-primary">더보기</button>
         </div>
       </Route>
       <Route path="/detail/:id">
-        <Detail images={images} zzanggu={zzanggu} />
+        <Detail images={images} zzanggu={zzanggu} data={data} setData={setData} />
         {console.log("아아악 깃농사 아아악 라우터53 (us-east 1에 인증서있어야함) -> 도메인 구입 (실습때 좋음 걍 싼거쓰면됨)")}
       </Route>
 

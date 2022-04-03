@@ -53,7 +53,18 @@ function App() {
               })
             }
           </div>
-          <button className="btn btn-primary">더보기</button>
+          {/*  서버한티 get요청하는 코드 //! 어디다 요청할지 어케알아요 ? 서버쟁이한테 물어봐야함ㅋ or api문서 보기 */}
+          <button className="btn btn-primary" onClick={() => {
+
+            axios.get('https://codingapple1.github.io/shop/data2.json')
+              .then(() => {
+                console.log(성공스멜)
+              })
+              .catch(() => {
+                console.log("루저ㅋ")
+              })
+
+          }}>더보기</button>
         </div>
       </Route>
       <Route path="/detail/:id">

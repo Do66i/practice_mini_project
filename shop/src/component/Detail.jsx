@@ -53,7 +53,7 @@ function Detail(props) {
 
       {alert ?
         <MyAlert>
-          <TitleOfMyAlert>서둘러 픽하세요! {console.log("암 얼라이브!")}</TitleOfMyAlert>
+          <TitleOfMyAlert>서둘러 픽하세요! {console.log("암 얼라이브!!!")}</TitleOfMyAlert>
         </MyAlert> : null}
 
       <div className="row">

@@ -3,58 +3,69 @@ import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 let Box = styled.div`
-padding : 10px;
-`
+  padding: 10px;
+`;
 let DetailOfTitle = styled.h4`
-font-size: 40px;
-color: rgb(198, 129, 129);
-font-weight: bold;
-`
+  font-size: 40px;
+  color: rgb(198, 129, 129);
+  font-weight: bold;
+`;
 
 let MyAlert = styled.div`
-padding : 0px;
-`
+  padding: 0px;
+`;
 
 let TitleOfMyAlert = styled.p`
-font-size: 30px;
-color: rgb(93, 176, 198);
-font-weight: bold;
-background-color: rgb(242, 210, 116);
-`
+  font-size: 30px;
+  color: rgb(93, 176, 198);
+  font-weight: bold;
+  background-color: rgb(242, 210, 116);
+`;
 
 function Detail(props) {
-
   let [alert, setAlert] = useState(true);
-  let [inputData, setInputData] = useState('');
+  let [inputData, setInputData] = useState("");
 
   useEffect(() => {
-    let timer = setTimeout(() => { setAlert(false); }, 2000);
-    return () => { clearTimeout(timer); console.log("타이머와 함께 사라져라 얍!") }
+    let timer = setTimeout(() => {
+      setAlert(false);
+    }, 2000);
+    return () => {
+      clearTimeout(timer);
+      console.log("타이머와 함께 사라져라 얍!");
+    };
   }, [alert]);
-
 
   let history = useHistory();
   let { id } = useParams();
   let findZzanggu = props.zzanggu.find((zzanggu) => {
     return zzanggu.id == id;
-  })
+  });
   let findImage = props.images.find((img) => {
-    return img.id == id
-  })
+    return img.id == id;
+  });
 
   return (
     <div className="container">
       <Box>
         <DetailOfTitle>Detail</DetailOfTitle>
       </Box>
-
+      <form>
+        <input type="email"></input>
+      </form>
       {inputData}
-      <input onChange={(e) => { setInputData(e.target.value) }} />
+      <input
+        placeholder="입력해봐라"
+        onChange={(e) => {
+          setInputData(e.target.value);
+        }}
+      />
 
-      {alert ?
+      {alert ? (
         <MyAlert>
           <TitleOfMyAlert>서둘러 픽하세요! {console.log("암 얼라이브!!!")}</TitleOfMyAlert>
-        </MyAlert> : null}
+        </MyAlert>
+      ) : null}
 
       <div className="row">
         <div className="col-md-6">
@@ -67,19 +78,33 @@ function Detail(props) {
 
           <Info data={props.data}></Info>
 
-          <button className="btn btn-danger" onClick={() => { props.setData() }}>마음속에 저-장💖</button>
-          <button className="btn btn-danger" onClick={() => { history.push('/detail/2') }}>백 투더 태초마을</button>
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              props.setData();
+            }}
+          >
+            마음속에 저-장💖
+          </button>
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              history.push("/detail/2");
+            }}
+          >
+            백 투더 태초마을
+          </button>
         </div>
       </div>
     </div>
-  )
+  );
 }
-{ console.log("깃농사아아ㅏㄱ아가악") }
+{
+  console.log("깃농사아아ㅏㄱ아가악");
+}
 
 function Info(props) {
-  return (
-    <p>data : {props.data[0]} </p>
-  )
+  return <p>data : {props.data[0]} </p>;
 }
 
 export default Detail;

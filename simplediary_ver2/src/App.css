@@ -1,9 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Source+Sans+Pro:ital,wght@1,300&display=swap");
-
 .App {
   text-align: center;
-  font-family: "Gowun Batang", serif;
-  font-family: "Source Sans Pro", sans-serif;
 }
 
 .App-logo {
@@ -39,8 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-button {
-  font-size: calc(10px + 2vmin);
 }

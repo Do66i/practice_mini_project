@@ -35,7 +35,6 @@ const HomeofSetAccount = () => {
   return (
     <div className="HomeofSetAccount">
       <AccountHeader headText={headText} leftChild={<AccountButton text={"<"} onClick={decreaseMonth} />} rightChild={<AccountButton text={">"} onClick={increaseMonth} />} />
-      <h1> 홈이 되고 싶었던 페이지</h1>
       <AccountList accountList={data} />
     </div>
   );

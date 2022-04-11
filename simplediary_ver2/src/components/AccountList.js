@@ -1,19 +1,21 @@
 import { useState } from "react";
+import AccountButton from "./AccountButton";
+import { useNavigate } from "react-router-dom";
+import AccountItem from "./AccountItem";
 const sortOptionList = [
   { value: "latest", name: "최신순" },
   { value: "oldest", name: "오래된순" },
 ];
 
 const filterOptionList = [
-  { value: "all", name: "all" },
+  { value: "all", name: "모두보기" },
   { value: "good", name: "good" },
   { value: "bad", name: "bad" },
-  { value: "idk", name: "idk" },
 ];
 
 const ControlMenu = ({ value, onChange, optionList }) => {
   return (
-    <select value={value} onChange={(e) => onChange(e.target.value)}>
+    <select className="ControlMenu" value={value} onChange={(e) => onChange(e.target.value)}>
       {optionList.map((it, idx) => (
         <option key={idx} value={it.value}>
           {it.name}
@@ -24,19 +26,18 @@ const ControlMenu = ({ value, onChange, optionList }) => {
 };
 
 const AccountList = ({ accountList }) => {
+  const navigate = useNavigate();
+
   const [sortType, setSortType] = useState("latest");
   const [filter, setFilter] = useState("all");
 
   const getProcessedAccountList = () => {
     const filterCallBack = (item) => {
       if (filter === "good") {
-        return item.category;
+        return parseInt(item.emotion) <= 3;
       }
       if (filter === "bad") {
-        return item.category;
-      }
-      if (filter === "idk") {
-        return item.category;
+        return parseInt(item.emotion) > 3;
       }
     };
 
@@ -57,14 +58,24 @@ const AccountList = ({ accountList }) => {
   };
 
   return (
-    <div>
-      <ControlMenu value={sortType} onChange={setSortType} optionList={sortOptionList} />
-      <ControlMenu value={filter} onChange={setFilter} optionList={filterOptionList} />
+    <div className="AccountList">
+      <div className="menu_wrapper">
+        <div className="left_col">
+          <ControlMenu value={sortType} onChange={setSortType} optionList={sortOptionList} />
+          <ControlMenu value={filter} onChange={setFilter} optionList={filterOptionList} />
+        </div>
+        <div className="right_col">
+          <AccountButton type={"positive"} text={"가계부입력"} onClick={() => navigate("/new")} />
+        </div>
+      </div>
 
       {getProcessedAccountList().map((it) => (
-        <div key={it.id}>{it.content}</div>
+        <AccountItem key={it.id} {...it} />
       ))}
     </div>
   );
 };
+
+// AccountList.defaultProps = { accountList: ["무언가 오류가 있습니다"] }; // 배열 전달 오류시 빈배열전송
+
 export default AccountList;

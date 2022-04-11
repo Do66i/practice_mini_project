@@ -1,8 +1,7 @@
 import React, { useReducer, useRef, useState } from "react";
-import AccountofSetAccount from "../pages/AccountofSetAccount";
-import EditofSetAccount from "../pages/EditofSetAccount";
+
 import HomeofSetAccount from "../pages/HomeofSetAccount";
-import NewofSetAccount from "../pages/NewofSetAccount";
+import EmotionItem from "./EmotionItem";
 
 const reducer = (state, action) => {
   let newState = [];
@@ -35,26 +34,26 @@ export const AccountDispatchContext = React.createContext(); //Context API
 const dummyData = [
   {
     id: 1,
-    emotion: "bad",
-    content: "bad",
+    emotion: 1,
+    content: "emotion : 1",
     date: 1649666224221,
   },
   {
     id: 2,
-    emotion: "bad",
-    content: "bad",
+    emotion: 3,
+    content: "emotion : 3",
     date: 1649666224222,
   },
   {
     id: 3,
-    emotion: "good",
-    content: "good",
+    emotion: 5,
+    content: "emotion : 3",
     date: 1649666224223,
   },
   {
     id: 4,
-    emotion: "idk",
-    content: "good",
+    emotion: 4,
+    content: "emotion : 4",
     date: 1649666224224,
   },
   // {
@@ -96,21 +95,9 @@ const Account = () => {
   const [currentView, setCurrentView] = useState("");
   return (
     <AccountStateContext.Provider value={data}>
-      {" "}
-      {/* //! */}
       <AccountDispatchContext.Provider value={{ onCreate, onRemove, onEdit }}>
         <div className="Account">
-          {currentView === "Account" ? <AccountofSetAccount /> : null}
-          {currentView === "home" ? <HomeofSetAccount /> : null}
-          {currentView === "edit" ? <EditofSetAccount /> : null}
-          {currentView === "new" ? <NewofSetAccount /> : null}
-
-          <div className="AccountButtonWrapper">
-            <button onClick={() => setCurrentView("Account")}>계산</button>
-            <button onClick={() => setCurrentView("home")}>홈</button>
-            <button onClick={() => setCurrentView("edit")}>2</button>
-            <button onClick={() => setCurrentView("new")}>4</button>
-          </div>
+          <HomeofSetAccount />
         </div>
       </AccountDispatchContext.Provider>
     </AccountStateContext.Provider>

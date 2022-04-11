@@ -1,23 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Roboto+Slab:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
 
 body {
   background-color: #f6f6f6;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto Slab", serif;
+  font-family: "Gowun Batang", serif;
 
   min-height: 100vh;
   margin: 0px;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 900px) {
   .App {
-    width: 640px;
+    width: 700px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 900px) {
   .App {
     width: 90vw;
   }
@@ -29,16 +29,17 @@ body {
 }
 
 .App {
+  font-family: "Gowun Batang", serif;
   font-size: 85%;
   min-height: 100vh;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 /* BUTTON✨ */
 
 .AccountButton {
-  font-family: "Roboto Slab", serif;
+  font-family: "Gowun Batang", serif;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -84,7 +85,8 @@ body {
 
 .AccountHeader .head_text {
   width: 50%;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: bold;
   color: #7c98bc;
   justify-content: center;
 }
@@ -99,7 +101,7 @@ body {
 }
 
 .AccountHeader button {
-  font-family: "Roboto Slab", serif;
+  font-family: "Gowun Batang", serif;
 }
 
 /* DiaryList */
@@ -133,7 +135,7 @@ body {
 
   cursor: pointer;
 
-  font-family: "Roboto Slab", serif;
+  font-family: "Gowun Batang", serif;
   font-size: 18px;
 }
 
@@ -156,4 +158,189 @@ body {
   border-radius: 5px;
   display: flex;
   justify-content: center;
+}
+
+.AccountItem .emotion_img_wrapper_1 {
+  background-color: #64c964;
+}
+
+.AccountItem .emotion_img_wrapper_2 {
+  background-color: #9dd772;
+}
+
+.AccountItem .emotion_img_wrapper_3 {
+  background-color: #fdce17;
+}
+
+.AccountItem .emotion_img_wrapper_4 {
+  background-color: #fd8446;
+}
+
+.AccountItem .emotion_img_wrapper_5 {
+  background-color: #fd565f;
+}
+
+.AccountItem .emotion_img_wrapper img {
+  width: 50%;
+}
+
+.AccountItem .info_wrapper {
+  flex-grow: 1;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.AccountItem .account_date {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.AccountItem .account_content_preview {
+  font-size: 19px;
+}
+
+.AccountItem .btn_wrapper {
+  min-width: 70px;
+}
+
+/* AccountEditor */
+.AccountEditor textarea {
+  font-family: "";
+}
+
+.AccountEditor h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.AccountEditor .input_date {
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(127, 167, 217, 0.148);
+
+  font-family: "Gowun Batang", serif;
+  font-weight: bold;
+  font-size: 15px;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  cursor: pointer;
+}
+
+.AccountEditor .emotion_list_wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 2%;
+}
+
+.AccountEditor textarea {
+  font-family: "Gowun Batang", serif;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 20px;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  outline: none;
+
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(127, 167, 217, 0.148);
+}
+
+.AccountEditor .control_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* EMOTION ITEM */
+
+.EmotionItem {
+  cursor: pointer;
+
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.EmotionItem img {
+  width: 40%;
+  margin-bottom: 10px;
+}
+
+.EmotionItem span {
+  font-size: 15px;
+}
+
+.EmotionItem_off {
+  background-color: #ececec;
+}
+
+.EmotionItem_on_1 {
+  background-color: #64c964;
+  color: whitesmoke;
+}
+
+.EmotionItem_on_2 {
+  background-color: #9dd772;
+  color: whitesmoke;
+}
+
+.EmotionItem_on_3 {
+  background-color: #fdce17;
+  color: whitesmoke;
+}
+
+.EmotionItem_on_4 {
+  background-color: #fd8446;
+  color: whitesmoke;
+}
+
+.EmotionItem_on_5 {
+  background-color: #fd565f;
+  color: whitesmoke;
+}
+
+.input_account {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  font-family: "Gowun Batang", serif;
+  font-size: 20px;
+  outline: none;
+}
+
+.span_account {
+  font-size: 30px;
+}
+
+.accountSubmit {
+  background-color: white;
+
+  font-family: "Gowun Batang", serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-size: 30px;
+
+  white-space: nowrap;
 }

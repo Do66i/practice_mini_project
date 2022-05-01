@@ -1,7 +1,7 @@
 import React, { useReducer, useRef, useState } from "react";
 
 import HomeofSetAccount from "../pages/HomeofSetAccount";
-import EmotionItem from "./EmotionItem";
+import AccountEditor from "../components/AccountEditor";
 
 const reducer = (state, action) => {
   let newState = [];
@@ -56,12 +56,6 @@ const dummyData = [
     content: "emotion : 4",
     date: 1649666224224,
   },
-  // {
-  //   id: 5,
-  //   emotion: "티켓",
-  //   content: "더미데이터 예제입니다 무시하세요 가계부5번",
-  //   date: 1649666224225,
-  // },
 ];
 //! ------------------------ 예시용 더미데이터
 

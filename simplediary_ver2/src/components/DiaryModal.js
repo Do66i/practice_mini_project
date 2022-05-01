@@ -51,7 +51,7 @@ export const ModalView = styled.div.attrs((props) => ({
 
   > div.desc {
     margin-top: 25px;
-    color: 7c98bc;
+    color: #7c98bc;
   }
 `;
 

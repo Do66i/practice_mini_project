@@ -3,6 +3,7 @@ import "./App.css";
 import Template from "./components/Template";
 import TodoList from "./components/TodoList";
 import Todos from "./todos";
+import Modal from "./Modal";
 import styled, { keyframes } from "styled-components";
 
 let Box = styled.div`
@@ -92,6 +93,7 @@ const App = () => {
         </Button>
       </Box>
       <p>개</p>
+      <Modal />
     </Template>
   );
 };

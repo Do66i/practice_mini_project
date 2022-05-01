@@ -2,23 +2,21 @@ import React from "react";
 import "./App.css";
 
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import Diary from "./components/Diary";
-import Account from "./components/Account";
-import NewofSetAccount from "./pages/NewofSetAccount";
-import EditofSetAccout from "./pages/EditofSetAccount";
+
+// import NewofSetAccount from "./pages/NewofSetAccount";
+import Diary from "./Diary";
+import Account from "./Account/Account";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Link to={"/diary"}>Diary</Link>
-        <Link to={"/account"}>Account</Link>
+        <Link to={"/account"}>Accounttest</Link>
+        <Link to={"/diary "}>DiaryTest</Link>
 
         <Routes>
-          <Route path="/Diary" element={<Diary />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/new" element={<NewofSetAccount />} />
-          <Route path="/edit" element={<EditofSetAccout />} />
+          <Route path="/diary" element={<Diary />} />
         </Routes>
       </div>
     </BrowserRouter>

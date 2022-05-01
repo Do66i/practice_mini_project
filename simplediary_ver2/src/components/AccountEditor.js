@@ -1,10 +1,10 @@
 import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AccountDispatchContext } from "./Account";
 
 import AccountHeader from "../components/AccountHeader";
 import AccountButton from "../components/AccountButton";
 import EmotionItem from "./EmotionItem";
+import { AccountDispatchContext } from "./Account";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -49,6 +49,8 @@ const AccountEditor = () => {
   const [emotion, setEmotion] = useState(3);
   const [date, setDate] = useState();
 
+  const { onCreate } = useContext(AccountDispatchContext);
+
   const handleClickEmote = (emotion) => {
     setEmotion(emotion);
   };
@@ -60,6 +62,8 @@ const AccountEditor = () => {
       contentRef.current.focus();
       return;
     }
+    onCreate(date, content, emotion);
+    navigate("/", { replace: true });
   };
 
   return (
@@ -98,7 +102,12 @@ const AccountEditor = () => {
         <section>
           <div className="control_box">
             <AccountButton text={"취소"} onClick={() => navigate(-1)} />
-            <button className="accountSubmit" onClick={() => {}}>
+            <button
+              className="accountSubmit"
+              onClick={() => {
+                handleSubmit();
+              }}
+            >
               ✏️
             </button>
           </div>

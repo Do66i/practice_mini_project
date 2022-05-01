@@ -17,7 +17,7 @@ const AccountItem = ({ id, emotion, content, date }) => {
       </div>
       <div onClick={goDetail} className="info_wrapper">
         <div className="account_date">{strDate}</div>
-        <div className="account_content_preview">{content.slice(0.25)}</div>
+        <div className="account_content_preview">{content.slice(0, 25)}</div>
       </div>
       <div className="btn_wrapper">
         <AccountButton text={"수정하기"} />

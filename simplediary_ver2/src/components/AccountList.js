@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import AccountButton from "./AccountButton";
 import { useNavigate } from "react-router-dom";
 import AccountItem from "./AccountItem";
+import Test from "./Test";
 const sortOptionList = [
   { value: "latest", name: "최신순" },
   { value: "oldest", name: "오래된순" },
@@ -76,6 +77,6 @@ const AccountList = ({ accountList }) => {
   );
 };
 
-// AccountList.defaultProps = { accountList: ["무언가 오류가 있습니다"] }; // 배열 전달 오류시 빈배열전송
+AccountList.defaultProps = { accountList: ["무언가 오류가 있습니다"] }; // 배열 전달 오류시 빈배열전송
 
 export default AccountList;

@@ -1,0 +1,365 @@
+/* --------------ANIMATION ---------------*/
+@keyframes AccountModalBtnAnimation {
+  50% {
+    border-top-color: rgb(243, 181, 209);
+    border-right-color: rgb(243, 181, 209);
+    -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  }
+  99% {
+    border-bottom-color: rgb(243, 181, 209);
+    border-left-color: rgb(243, 181, 209);
+    -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+  }
+  100% {
+    border-color: rgb(243, 181, 209);
+  }
+}
+
+@keyframes AccountListBox {
+  49% {
+    border-top-color: #7c98bc;
+    border-right-color: #7c98bc;
+    -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  }
+  50% {
+    border-top-color: #7c98bc;
+    border-right-color: #7c98bc;
+  }
+  99% {
+    border-bottom-color: #7c98bc;
+    border-left-color: #7c98bc;
+    -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+  }
+  100% {
+    border-color: #7c98bc;
+  }
+}
+
+@keyframes DiaryOnClickMoving {
+  0%,
+  80% {
+    transform: rotate(0deg);
+  }
+  5%,
+  15%,
+  25%,
+  35%,
+  45% {
+    transform: rotate(4deg);
+  }
+  10%,
+  40%,
+  30%,
+  40% {
+    transform: rotate(-2deg);
+  }
+}
+
+/* -------------- ModalView ----------------- */
+.Modalview {
+  border: 5px solid;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #ececec;
+
+  width: 80%;
+  min-width: 400px;
+  max-width: 800px;
+  height: 80%;
+
+  animation-name: AccountModalBtnAnimation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.ModalviewSpanBtn {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.ModalviewDesc {
+  font-size: 30px;
+  margin-top: 0.5em;
+  color: #324456;
+}
+
+/* --------------ACCOUNT ---------------*/
+
+.AccountEditor {
+  text-align: center;
+  padding: 20px;
+}
+
+.Account .AccountHeadTotalMoney {
+  margin-top: 120px;
+}
+
+.Account .AccountHeadTotalMoney h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.Account .AccountHeadpaidMoney h3 {
+  text-align: center;
+  font-size: 20px;
+}
+
+.Account input {
+  font-family: "Gowun Batang", serif;
+  background-color: #ececec;
+  border-bottom: 2px solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 20px;
+  width: 200px;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: all 0.2s;
+  outline: none;
+  animation-name: inputAnimation;
+}
+.Account input:hover {
+  transform: scale(1.03);
+  border-color: #cd6fed;
+}
+
+.InputFifthArea {
+  margin-top: 30px;
+}
+
+.InputFifthAreaLabel {
+  font-size: 18px;
+}
+
+select {
+  outline: none;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: "Gowun Batang", serif;
+  border: none;
+}
+select:hover {
+  transform: scale(1.03);
+  border-color: #6fa8ed;
+}
+
+/* ---------------------- ACCOUNT EDIT -------------------------*/
+
+.AccountEditor select {
+  width: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.AccountEditor button {
+  width: 100px;
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: #ececec;
+  font-size: 30px;
+}
+
+.InputLastAreaBtn:hover {
+  transition: all ease 1s;
+  transform: rotate(-45deg);
+}
+
+.AccountEditor .AccountEditorReturnDiv {
+  margin-top: 100px;
+}
+
+.AccountEditor span {
+  margin-bottom: 12px;
+}
+
+.Account .item_nameSpan {
+  margin-bottom: 12px;
+}
+
+/* List */
+.AccountEditorReturnDiv div {
+  margin-bottom: 7px;
+}
+.AccountEditorReturnDiv span {
+  font-size: 25px;
+}
+
+.AccountEditorH2 {
+  margin-bottom: -40px;
+  font-size: 2.2rem;
+}
+
+/*--------------------------ACCOUNT ITEM-------------------------*/
+.AccountItem {
+  border-radius: 20px;
+  background-color: rgb(245, 214, 228);
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.AccountItem .infoFirstSecondBox {
+  text-align: center;
+  width: 50%;
+}
+
+.AccountItem .AccountItmeP1 {
+  padding-top: 5px;
+  margin: 8px 0px;
+  font-size: 18px;
+}
+.AccountItem .AccountItmeP2 {
+  margin: 8px 0px;
+  font-size: 15px;
+}
+.AccountItem .AccountItmeP3 {
+  margin: 8px 0px;
+  font-size: 18px;
+}
+
+.AccountItem .info {
+  width: 25%;
+}
+
+.AccountItem .date {
+  border-top: 1px solid gray;
+}
+
+.AccountItem .AccountItemItemNameBox {
+  margin: 12% 0 0 0;
+  font-size: 18px;
+}
+
+.AccountItem .AccountItemContentBox {
+  padding-top: 1%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.AccountListSpanBox {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  transform-origin: top;
+  animation: DiaryOnClickMoving 4s linear;
+}
+.AccountItem .AccountItemBtnBox {
+  padding-top: 5%;
+  text-align: center;
+  width: 25%;
+  justify-content: end;
+  background-color: rgb(245, 214, 228);
+  margin-bottom: 10px;
+}
+
+.AccountItem .AccountItemRemoteBtn {
+  font-family: "Gowun Batang", serif;
+  border: none;
+  background-color: rgb(245, 214, 228);
+  margin-top: 1vw;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.AccountItem .AccountItemRemoteBtn:hover {
+  transition: all ease 1s;
+  transform: translateY(-5px);
+}
+
+.AccountItem .AccountItemEditBtn {
+  margin-left: 4px;
+  margin-top: 1.5vw;
+  font-family: "Gowun Batang", serif;
+  border: none;
+  background-color: rgb(245, 214, 228);
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.AccountItem .AccountItemEditBtn:hover {
+  transition: all ease 1s;
+  transform: translateY(5px);
+}
+
+.AccountItem .AccountItemQuitEditBtn {
+  font-family: "Gowun Batang", serif;
+  border: none;
+  background-color: rgb(245, 214, 228);
+  margin-top: 19%;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.AccountItem .AccountItemQuitEditBtn:hover {
+  transition: all ease 1s;
+  transform: translateY(-5px);
+}
+
+.AccountItem .AccountItemBtnBox {
+  padding-top: 5%;
+  text-align: center;
+  width: 25%;
+  justify-content: end;
+  background-color: rgb(245, 214, 228);
+  margin-bottom: 10px;
+}
+
+.AccountItem .AccountItemQuitEditBox {
+  background-color: rgb(245, 214, 228);
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+
+.AccountItem .AccountItemEditSubmitBox {
+  background-color: rgb(245, 214, 228);
+  margin-bottom: 10px;
+}
+
+.AccountItem .AccountItemEditSubmitBtn {
+  font-family: "Gowun Batang", serif;
+  border: none;
+  background-color: rgb(245, 214, 228);
+  margin-bottom: 10px;
+  padding-left: 5px;
+  font-size: 18px;
+}
+
+.AccountItem .AccountItemEditSubmitBtn:hover {
+  transition: all ease 1s;
+  transform: translateY(5px);
+}
+
+.AccountItem .AccountItemBtnBox :last-child {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.AccountItem .AccountItemInput {
+  background-color: rgb(245, 214, 228);
+  padding-top: 2vw;
+  width: 17vw;
+}
+
+.AccountItem .AccountItemInput input {
+  font-family: "Gowun Batang", serif;
+  font-size: 18px;
+
+  height: 2vw;
+}
+
+/* --------------------ACCOUNT LIST-----------------------*/
+
+.AccountListSpanBox {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  transform-origin: top;
+  animation: DiaryOnClickMoving 4s linear;
+}
